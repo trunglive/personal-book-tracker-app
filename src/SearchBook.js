@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
+import PropTypes from 'prop-types'
+import * as BooksAPI from './utils/BooksAPI'
 
 class SearchBook extends Component {
+	static propTypes = {
+    onMoveBook: PropTypes.func.isRequired
+	}
+
 	state = {
 		search: '',
-		books: null
+		books: null,
+		shelf: 'none'
 	}
 
 	componentDidMount() {
@@ -25,10 +31,17 @@ class SearchBook extends Component {
 				}))
 			})
 	}
+
+	updateShelf(value) {
+		this.setState({
+			shelf: value
+		})
+	}
 			
 	render() {
-		const { search } = this.state
-		console.log(this.state.books);
+		const { onMoveBook } = this.props
+		const { search, books, shelf } = this.state
+
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">
@@ -43,11 +56,11 @@ class SearchBook extends Component {
 					</div>
 				</div>
 
-				{!this.state.books
+				{!books
 					? <p style={{textAlign: 'center'}}>Loading...</p>
 					: <div className="search-books-results">
 							<ol className="books-grid">
-								{this.state.books.map(book => {
+								{books.map(book => {
 									return (
 										<li key={book.id}>
 											<div className="book">
@@ -56,7 +69,13 @@ class SearchBook extends Component {
 														<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
 													</a>
 													<div className="book-shelf-changer">
-														<select>
+														<select value={shelf}
+															onChange={(event) => {
+																if (event.target.value !== shelf) {
+																	onMoveBook(book, event.target.value);
+																	this.updateShelf(event.target.value);
+																}
+															}}>
 															<option value="none" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
 															<option value="wantToRead">Want to Read</option>
@@ -67,7 +86,6 @@ class SearchBook extends Component {
 												</div>
 												
 												<div className="book-title">{book.title}</div>
-												{console.log(book.authors)}
 												<div className="book-authors">{book.authors ? book.authors.join(', ') : 'No Author'}</div>
 											</div>
 										</li>
@@ -75,7 +93,6 @@ class SearchBook extends Component {
 								})}
 							</ol>
 						</div>}
-				
 			</div>
 		)
 	}
