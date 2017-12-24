@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Read extends Component {
-	static propTypes = {
+  static propTypes = {
     books: PropTypes.array.isRequired,
     onMoveBook: PropTypes.func.isRequired
-	}
-	
-	state = {
-    shelf: 'read'
-  }
+  };
 
-	render() {
-		const { books, onMoveBook } = this.props
-		const { shelf } = this.state
+  state = {
+    shelf: "read"
+  };
 
-		return (
+  render() {
+    const { books, onMoveBook } = this.props;
+    const { shelf } = this.state;
+
+    return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">Read</h2>
         <div className="bookshelf-books">
@@ -26,14 +26,31 @@ class Read extends Component {
                   <div className="book">
                     <div className="book-top">
                       <a href={book.canonicalVolumeLink} target="_blank">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                        <div
+                          className="book-cover"
+                          style={{
+                            width: 128,
+                            height: 193,
+                            backgroundImage: `url(${book.imageLinks.thumbnail})`
+                          }}
+                        />
                       </a>
-                      
+
                       <div className="book-shelf-changer">
-												<select value={shelf}
-												 	onChange={(event) => event.target.value !== shelf ? onMoveBook(book, event.target.value) : event.target.value}>
-                          <option value="none" disabled>Move to...</option>
-                          <option value="currentlyReading">Currently Reading</option>
+                        <select
+                          value={shelf}
+                          onChange={event =>
+                            event.target.value !== shelf
+                              ? onMoveBook(book, event.target.value)
+                              : event.target.value
+                          }
+                        >
+                          <option value="none" disabled>
+                            Move to...
+                          </option>
+                          <option value="currentlyReading">
+                            Currently Reading
+                          </option>
                           <option value="wantToRead">Want to Read</option>
                           <option value="read">Read</option>
                           <option value="none">None</option>
@@ -41,17 +58,18 @@ class Read extends Component {
                       </div>
                     </div>
                     <div className="book-title">{book.title}</div>
-                    <div className="book-authors">{book.authors ? book.authors.join(', ') : 'No Author'}</div>
+                    <div className="book-authors">
+                      {book.authors ? book.authors.join(", ") : "No Author"}
+                    </div>
                   </div>
                 </li>
-              )
+              );
             })}
           </ol>
         </div>
       </div>
-    )
-	}
+    );
+  }
 }
 
-export default Read
-
+export default Read;
