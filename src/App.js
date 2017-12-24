@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import CurrentlyReading from './components/CurrentlyReading'
 import WantToRead from './components/WantToRead'
 import Read from './components/Read'
-import SearchBook from './SearchBook'
+import SearchBook from './components/SearchBook'
 import * as BooksAPI from './utils/BooksAPI'
 import './App.css'
 
