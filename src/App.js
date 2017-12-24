@@ -62,13 +62,6 @@ class BooksApp extends Component {
   }
 
   render() {
-    
-    // console.log(BooksAPI.search('Astronomy'));
-    // console.log(BooksAPI.get('evuwdDLfAyYC'));
-    // console.log(this.state.read);
-    // console.log(this.state.wantToRead);
-    // console.log(this.state.currentlyReading);
-
     return (
       <div className="app">
         <Route exact path="/" render={() => (

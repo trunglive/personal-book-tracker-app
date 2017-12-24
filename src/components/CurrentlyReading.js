@@ -6,7 +6,7 @@ class currentlyReading extends Component {
     books: PropTypes.array.isRequired,
     onMoveBook: PropTypes.func.isRequired
   }
-
+  
   state = {
     shelf: 'currentlyReading'
   }
@@ -14,7 +14,7 @@ class currentlyReading extends Component {
   render() {
     const { books, onMoveBook } = this.props
     const { shelf } = this.state
-
+    
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">Currently Reading</h2>

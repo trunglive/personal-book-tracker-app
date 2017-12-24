@@ -32,12 +32,6 @@ class SearchBook extends Component {
 			})
 	}
 
-	updateShelf(value) {
-		this.setState({
-			shelf: value
-		})
-	}
-			
 	render() {
 		const { onMoveBook } = this.props
 		const { search, books, shelf } = this.state
@@ -72,11 +66,10 @@ class SearchBook extends Component {
 														<select value={shelf}
 															onChange={(event) => {
 																if (event.target.value !== shelf) {
-																	onMoveBook(book, event.target.value);
-																	this.updateShelf(event.target.value);
+																	onMoveBook(book, event.target.value)
 																}
 															}}>
-															<option value="none" disabled>Move to...</option>
+															<option value="moveTo" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
 															<option value="wantToRead">Want to Read</option>
 															<option value="read">Read</option>
@@ -84,7 +77,6 @@ class SearchBook extends Component {
 														</select>
 													</div>
 												</div>
-												
 												<div className="book-title">{book.title}</div>
 												<div className="book-authors">{book.authors ? book.authors.join(', ') : 'No Author'}</div>
 											</div>
