@@ -5,6 +5,7 @@ import * as BooksAPI from '../utils/BooksAPI';
 
 class SearchBook extends Component {
   static propTypes = {
+    booksOnShelf: PropTypes.array.isRequired,
     onMoveBook: PropTypes.func.isRequired
   };
 

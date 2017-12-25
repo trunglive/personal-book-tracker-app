@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RenderBooks({ section, books, onMoveBook }) {
+function RenderBooks({ section, booksOnShelf, onMoveBook }) {
   return (
     <div className='bookshelf'>
       <h2 className='bookshelf-title'>{section}</h2>
       <div className='bookshelf-books'>
         <ol className='books-grid'>
-          {books.map(book => {
+          {booksOnShelf.map(book => {
             return (
               <li key={book.id}>
                 <div className='book'>
@@ -55,7 +55,8 @@ function RenderBooks({ section, books, onMoveBook }) {
 }
 
 RenderBooks.propTypes = {
-  books: PropTypes.array.isRequired,
+  section: PropTypes.string.isRequired,
+  booksOnShelf: PropTypes.array.isRequired,
   onMoveBook: PropTypes.func.isRequired
 };
 
