@@ -55,17 +55,17 @@ class BooksApp extends Component {
                 <div>
                   <RenderBooks
                     section='Currently Reading'
-                    booksOnShelf={currentlyReading}
+                    books={currentlyReading}
                     onMoveBook={this.moveBook}
                   />
                   <RenderBooks
                     section='Want To Read'
-                    booksOnShelf={wantToRead}
+                    books={wantToRead}
                     onMoveBook={this.moveBook}
                   />
                   <RenderBooks
                     section='Read'
-                    booksOnShelf={read}
+                    books={read}
                     onMoveBook={this.moveBook}
                   />
                 </div>
