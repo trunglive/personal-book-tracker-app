@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Read extends Component {
   static propTypes = {
@@ -7,27 +7,22 @@ class Read extends Component {
     onMoveBook: PropTypes.func.isRequired
   };
 
-  state = {
-    shelf: "read"
-  };
-
   render() {
     const { books, onMoveBook } = this.props;
-    const { shelf } = this.state;
-
+    
     return (
-      <div className="bookshelf">
-        <h2 className="bookshelf-title">Read</h2>
-        <div className="bookshelf-books">
-          <ol className="books-grid">
+      <div className='bookshelf'>
+        <h2 className='bookshelf-title'>Read</h2>
+        <div className='bookshelf-books'>
+          <ol className='books-grid'>
             {books.map(book => {
               return (
                 <li key={book.id}>
-                  <div className="book">
-                    <div className="book-top">
-                      <a href={book.canonicalVolumeLink} target="_blank">
+                  <div className='book'>
+                    <div className='book-top'>
+                      <a href={book.canonicalVolumeLink} target='_blank'>
                         <div
-                          className="book-cover"
+                          className='book-cover'
                           style={{
                             width: 128,
                             height: 193,
@@ -36,30 +31,28 @@ class Read extends Component {
                         />
                       </a>
 
-                      <div className="book-shelf-changer">
+                      <div className='book-shelf-changer'>
                         <select
-                          value={shelf}
+                          value={book.shelf}
                           onChange={event =>
-                            event.target.value !== shelf
-                              ? onMoveBook(book, event.target.value)
-                              : event.target.value
+                            onMoveBook(book, event.target.value)
                           }
                         >
-                          <option value="none" disabled>
+                          <option value='default' disabled>
                             Move to...
                           </option>
-                          <option value="currentlyReading">
+                          <option value='currentlyReading'>
                             Currently Reading
                           </option>
-                          <option value="wantToRead">Want to Read</option>
-                          <option value="read">Read</option>
-                          <option value="none">None</option>
+                          <option value='wantToRead'>Want to Read</option>
+                          <option value='read'>Read</option>
+                          <option value='none'>None</option>
                         </select>
                       </div>
                     </div>
-                    <div className="book-title">{book.title}</div>
-                    <div className="book-authors">
-                      {book.authors ? book.authors.join(", ") : "No Author"}
+                    <div className='book-title'>{book.title}</div>
+                    <div className='book-authors'>
+                      {book.authors ? book.authors.join(', ') : 'No Author'}
                     </div>
                   </div>
                 </li>
