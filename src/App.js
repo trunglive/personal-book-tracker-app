@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import CurrentlyReading from './components/CurrentlyReading';
-import WantToRead from './components/WantToRead';
-import Read from './components/Read';
+import RenderBooks from './components/RenderBooks';
 import SearchBook from './components/SearchBook';
 import * as BooksAPI from './utils/BooksAPI';
 import './App.css';
@@ -55,12 +53,21 @@ class BooksApp extends Component {
               </div>
               <div className='list-books-content'>
                 <div>
-                  <CurrentlyReading
+                  <RenderBooks
+                    section='Currently Reading'
                     books={currentlyReading}
                     onMoveBook={this.moveBook}
                   />
-                  <WantToRead books={wantToRead} onMoveBook={this.moveBook} />
-                  <Read books={read} onMoveBook={this.moveBook} />
+                  <RenderBooks
+                    section='Want To Read'
+                    books={wantToRead}
+                    onMoveBook={this.moveBook}
+                  />
+                  <RenderBooks
+                    section='Read'
+                    books={read}
+                    onMoveBook={this.moveBook}
+                  />
                 </div>
               </div>
               <div className='open-search'>
