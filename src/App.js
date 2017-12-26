@@ -27,7 +27,7 @@ class BooksApp extends Component {
         book.shelf = shelf;
 
         this.setState(state => ({
-          books: state.books.filter(b => b.id !== book.id).concat([book])
+          books: state.books.filter(b => b.id !== book.id).concat([ book ])
         }));
       });
     }
@@ -54,7 +54,7 @@ class BooksApp extends Component {
                   Keep track of your favorite books
                 </p>
                 <a href='#available-books'>
-                  <span className='ion-ios-arrow-down' />
+                  <span className='ion-ios-arrow-down'/>
                 </a>
               </div>
               <img
