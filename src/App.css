@@ -54,7 +54,7 @@ body, .app {
 }
 
 .bookshelf {
-  margin: 100px 60px;
+  margin: 100px 30px;
   padding: 0 10px 30px;
 }
 
@@ -162,16 +162,16 @@ body, .app {
 .book {
   position: relative;
   display: flex;
-  flex-basis: 30%;
+  flex-basis: 340px;
   /* flex-grow: 1; */
   align-items: center;
-  margin: 30px 10px;
+  margin: 20px;
   height: 260px;
   transition: box-shadow .2s ease-out;
 }
 
 .book:hover {
-  box-shadow: 15px -20px 60px -12px rgba(57, 62, 70, 0.2); 
+  box-shadow: 10px 15px 90px rgba(57, 62, 70, 0.2); 
 }
 
 .book-shelf-changer {
