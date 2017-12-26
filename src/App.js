@@ -49,11 +49,19 @@ class BooksApp extends Component {
           render={() => (
             <div className='list-books'>
               <div className='list-books-title'>
-                <a href='#'>
-                  <span className='ion-ios-bookmarks-outline'></span>
-                  <span>A Book Lending App</span>
+                <p className='list-books-title-main'>Book Lending App</p>
+                <p className='list-books-title-sub'>
+                  Keep track of your favorite books
+                </p>
+                <a href='#available-books'>
+                  <span className='ion-ios-arrow-down' />
                 </a>
               </div>
+              <img
+                className='book-image'
+                src={require('./images/books.jpg')}
+                alt='book'
+              />
               <div className='list-books-content'>
                 <div>
                   <RenderBooks

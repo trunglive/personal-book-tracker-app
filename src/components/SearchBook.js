@@ -53,7 +53,7 @@ class SearchBook extends Component {
           <div className='search-books-input-wrapper'>
             <input
               type='text'
-              placeholder='Search by title or author'
+              placeholder='Search books by title or author'
               value={search}
               onChange={event => this.onSearch(event.target.value)}
             />
@@ -61,7 +61,7 @@ class SearchBook extends Component {
         </div>
 
         {!books ? (
-          <p style={{ textAlign: 'center' }}>Loading...</p>
+          <p style={{ textAlign: 'center' }}></p>
         ) : (
           <div className='bookshelf'>
             <div className='search-books-results'>

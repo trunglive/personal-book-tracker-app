@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function RenderBooks({ section, books, onMoveBook }) {
   return (
     <div className='bookshelf'>
-      <h2 className='bookshelf-title'>{section}</h2>
+      <h2 className='bookshelf-title' id='available-books'>{section}</h2>
       <div className='bookshelf-books'>
         <ol className='books-grid'>
           {books.map(book => {
