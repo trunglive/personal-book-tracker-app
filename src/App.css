@@ -163,7 +163,7 @@ body, .app {
   position: relative;
   display: flex;
   flex-basis: 30%;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   align-items: center;
   margin: 30px 10px;
   height: 260px;
