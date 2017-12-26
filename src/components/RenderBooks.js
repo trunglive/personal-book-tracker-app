@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RenderBooks({ section, books, onMoveBook }) {
+function RenderBooks({ id, section, books, onMoveBook }) {
   return (
-    <div className='bookshelf'>
-      <h2 className='bookshelf-title' id='available-books'>{section}</h2>
+    <div className='bookshelf' id={id}>
+      <h2 className='bookshelf-title'>{section}</h2>
       <div className='bookshelf-books'>
         <ol className='books-grid'>
           {books.map(book => {
@@ -61,6 +61,7 @@ function RenderBooks({ section, books, onMoveBook }) {
 }
 
 RenderBooks.propTypes = {
+  id: PropTypes.string.isRequired,
   section: PropTypes.string.isRequired,
   books: PropTypes.array.isRequired,
   onMoveBook: PropTypes.func.isRequired

@@ -53,7 +53,7 @@ class BooksApp extends Component {
                 <p className='list-books-title-sub'>
                   Keep track of your favorite books
                 </p>
-                <a href='#available-books'>
+                <a href='#currently-reading'>
                   <span className='ion-ios-arrow-down'/>
                 </a>
               </div>
@@ -65,16 +65,19 @@ class BooksApp extends Component {
               <div className='list-books-content'>
                 <div>
                   <RenderBooks
+                    id='currently-reading'
                     section='Currently Reading'
                     books={currentlyReading}
                     onMoveBook={this.moveBook}
                   />
                   <RenderBooks
+                    id='want-to-read'
                     section='Want To Read'
                     books={wantToRead}
                     onMoveBook={this.moveBook}
                   />
                   <RenderBooks
+                    id='read'
                     section='Read'
                     books={read}
                     onMoveBook={this.moveBook}
