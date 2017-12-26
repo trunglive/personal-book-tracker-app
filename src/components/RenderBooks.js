@@ -9,41 +9,47 @@ function RenderBooks({ section, books, onMoveBook }) {
         <ol className='books-grid'>
           {books.map(book => {
             return (
-              <li key={book.id}>
-                <div className='book'>
-                  <div className='book-top'>
-                    <a href={book.canonicalVolumeLink} target='_blank'>
-                      <div
-                        className='book-cover'
-                        style={{
-                          width: 128,
-                          height: 193,
-                          backgroundImage: `url(${book.imageLinks.thumbnail})`
-                        }}
-                      />
-                    </a>
-
-                    <div className='book-shelf-changer'>
-                      <select
-                        value={book.shelf}
-                        onChange={event => onMoveBook(book, event.target.value)}
-                      >
-                        <option value='default' disabled>
-                          Move to...
-                        </option>
-                        <option value='currentlyReading'>
-                          Currently Reading
-                        </option>
-                        <option value='wantToRead'>Want to Read</option>
-                        <option value='read'>Read</option>
-                        <option value='none'>None</option>
-                      </select>
+              <li key={book.id} className='book'>
+                <div className='book-shelf-changer'>
+                  <select
+                    value={book.shelf}
+                    onChange={event => onMoveBook(book, event.target.value)}
+                  >
+                    <option value='default' disabled>
+                      Move to...
+                    </option>
+                    <option value='currentlyReading'>Currently Reading</option>
+                    <option value='wantToRead'>Want to Read</option>
+                    <option value='read'>Read</option>
+                    <option value='none'>None</option>
+                  </select>
+                </div>
+                <div className='book-aside'>
+                  <a href={book.canonicalVolumeLink} target='_blank'>
+                    <div
+                      className='book-cover'
+                      style={{
+                        width: 128,
+                        height: 193,
+                        backgroundImage: `url(${book.imageLinks.thumbnail})`
+                      }}
+                    />
+                  </a>
+                </div>
+                <div className='book-info'>
+                  <div>
+                    <div className='book-title'>{book.title}</div>
+                    <div className='book-authors'>
+                      by {book.authors ? book.authors.join(', ') : 'No Author'}
                     </div>
                   </div>
-                  <div className='book-title'>{book.title}</div>
-                  <div className='book-authors'>
-                    {book.authors ? book.authors.join(', ') : 'No Author'}
-                  </div>
+                  <a
+                    className='book-view'
+                    href={book.canonicalVolumeLink}
+                    target='_blank'
+                  >
+                    View Book
+                  </a>
                 </div>
               </li>
             );

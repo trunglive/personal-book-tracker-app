@@ -49,7 +49,10 @@ class BooksApp extends Component {
           render={() => (
             <div className='list-books'>
               <div className='list-books-title'>
-                <h1>MyReads</h1>
+                <a href='#'>
+                  <span className='ion-ios-bookmarks-outline'></span>
+                  <span>A Book Lending App</span>
+                </a>
               </div>
               <div className='list-books-content'>
                 <div>
