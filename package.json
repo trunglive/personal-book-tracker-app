@@ -23,9 +23,3 @@
     "deploy": "gh-pages -d build"
   }
 }
-
-
-
-
-
-
