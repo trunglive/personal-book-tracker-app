@@ -1,11 +1,10 @@
 {
-  "name": "myread",
+  "name": "book-tracker-app",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://trunglive.github.io/personal-book-tracker-app",
   "dependencies": {
     "gh-pages": "^1.1.0",
-    "jquery": "^3.2.1",
     "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
