@@ -45,7 +45,7 @@ class BooksApp extends Component {
       <div className='app'>
         <Route
           exact
-          path='/'
+          path={`${process.env.PUBLIC_URL}/`}
           render={() => (
             <div className='list-books'>
               <div className='list-books-title'>
@@ -85,14 +85,14 @@ class BooksApp extends Component {
                 </div>
               </div>
               <div className='open-search'>
-                <Link to='/search'>Add a book</Link>
+                <Link to={`${process.env.PUBLIC_URL}/search`}>Add a book</Link>
               </div>
             </div>
           )}
         />
 
         <Route
-          path='/search'
+          path={`${process.env.PUBLIC_URL}/search`}
           render={() => (
             <SearchBook booksOnShelf={books} onMoveBook={this.moveBook} />
           )}
