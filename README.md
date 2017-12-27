@@ -1,4 +1,6 @@
 # Personal Book Tracker App
+React Nanodegree Project #1 
+https://trunglive.github.io/personal-book-tracker-app
 
 To get started developing right away:
 * install all project dependencies with `npm install`
