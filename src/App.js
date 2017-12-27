@@ -49,9 +49,9 @@ class BooksApp extends Component {
           render={() => (
             <div className='list-books'>
               <div className='list-books-title'>
-                <p className='list-books-title-main'>Book Lending App</p>
+                <p className='list-books-title-main'>Book Tracker App</p>
                 <p className='list-books-title-sub'>
-                  Keep track of your favorite books
+                  Organize your favorite books
                 </p>
                 <a href='#currently-reading'>
                   <span className='ion-ios-arrow-down'/>
