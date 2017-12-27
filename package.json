@@ -2,18 +2,14 @@
   "name": "myread",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trunglive.github.io/book-organizer-app",
+  "homepage": "https://trunglive.github.io/personal-book-tracker-app",
   "dependencies": {
-    "bootstrap-select": "^1.12.4",
-    "escape-string-regexp": "^1.0.5",
-    "form-serialize": "^0.7.2",
     "gh-pages": "^1.1.0",
     "jquery": "^3.2.1",
     "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.2.2",
-    "sort-by": "^1.2.0"
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
@@ -27,6 +23,8 @@
     "deploy": "gh-pages -d build"
   }
 }
+
+
 
 
 
