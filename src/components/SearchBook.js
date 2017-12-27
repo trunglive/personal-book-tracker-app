@@ -48,7 +48,7 @@ class SearchBook extends Component {
       <div className='search-books'>
         <div className='search-books-bar'>
           <Link className='close-search' to={`${process.env.PUBLIC_URL}/`}>
-            Close
+            Home
           </Link>
           <div className='search-books-input-wrapper'>
             <input
