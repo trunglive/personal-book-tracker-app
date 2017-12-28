@@ -18,7 +18,7 @@ class SearchBook extends Component {
     this.onSearch(this.state.search);
   }
 
-  onSearch(terms) {
+  onSearch = (terms) => {
     this.setState(() => ({
       search: terms,
       books: null
