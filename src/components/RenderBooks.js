@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RenderBooks({ id, section, books, onMoveBook }) {
+const RenderBooks = ({ id, section, books, onMoveBook }) => {
   return (
     <div className='bookshelf' id={id}>
       <h2 className='bookshelf-title'>{section}</h2>
