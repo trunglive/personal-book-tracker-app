@@ -7,13 +7,9 @@ import * as BooksAPI from './utils/BooksAPI';
 import './App.css';
 
 class BooksApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: []
-    };
-    this.moveBook = this.moveBook.bind(this);
-  }
+  state = {
+    books: []
+  };
 
   componentDidMount() {
     BooksAPI.getAll().then(books => {
@@ -27,7 +23,7 @@ class BooksApp extends Component {
         book.shelf = shelf;
 
         this.setState(state => ({
-          books: state.books.filter(b => b.id !== book.id).concat([ book ])
+          books: state.books.filter(b => b.id !== book.id).concat([book])
         }));
       });
     }
@@ -54,7 +50,7 @@ class BooksApp extends Component {
                   Organize your favorite books
                 </p>
                 <a href='#currently-reading'>
-                  <span className='ion-ios-arrow-down'/>
+                  <span className='ion-ios-arrow-down' />
                 </a>
               </div>
               <img

@@ -9,14 +9,10 @@ class SearchBook extends Component {
     onMoveBook: PropTypes.func.isRequired
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      books: null
-    };
-    this.onSearch = this.onSearch.bind(this);
-  }
+  state = {
+    search: '',
+    books: null
+  };
 
   componentDidMount() {
     this.onSearch(this.state.search);
@@ -61,7 +57,7 @@ class SearchBook extends Component {
         </div>
 
         {!books ? (
-          <p style={{ textAlign: 'center' }}></p>
+          <p style={{ textAlign: 'center' }} />
         ) : (
           <div className='bookshelf'>
             <div className='search-books-results'>
@@ -72,12 +68,16 @@ class SearchBook extends Component {
                       <div className='book-shelf-changer'>
                         <select
                           value={book.shelf ? book.shelf : 'default'}
-                          onChange={event => onMoveBook(book, event.target.value)}
+                          onChange={event =>
+                            onMoveBook(book, event.target.value)
+                          }
                         >
                           <option value='default' disabled>
                             Move to...
                           </option>
-                          <option value='currentlyReading'>Currently Reading</option>
+                          <option value='currentlyReading'>
+                            Currently Reading
+                          </option>
                           <option value='wantToRead'>Want to Read</option>
                           <option value='read'>Read</option>
                           <option value='none'>None</option>
@@ -90,7 +90,9 @@ class SearchBook extends Component {
                             style={{
                               width: 128,
                               height: 193,
-                              backgroundImage: `url(${book.imageLinks.thumbnail})`
+                              backgroundImage: `url(${
+                                book.imageLinks.thumbnail
+                              })`
                             }}
                           />
                         </a>
@@ -99,7 +101,10 @@ class SearchBook extends Component {
                         <div>
                           <div className='book-title'>{book.title}</div>
                           <div className='book-authors'>
-                            by {book.authors ? book.authors.join(', ') : 'No Author'}
+                            by{' '}
+                            {book.authors
+                              ? book.authors.join(', ')
+                              : 'No Author'}
                           </div>
                         </div>
                         <a
